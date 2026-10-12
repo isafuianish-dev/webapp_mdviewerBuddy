@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Viewer Buddy</title>
+<link rel="icon" type="image/png" href="media/favicon.png">
+<link rel="stylesheet" href="https://isafuianish-dev.github.io/webapp_cdnBuddy/css/tokens.css">
+<link rel="stylesheet" href="https://isafuianish-dev.github.io/webapp_cdnBuddy/css/base.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/theme-init.js" data-app="webapp_mdviewerBuddy"></script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-brand">
+      <span class="brand-icon" aria-hidden="true"><span class="icon" style="-webkit-mask-image:url(media/icon.svg);mask-image:url(media/icon.svg);"></span></span>
+      <h1>MD Viewer Buddy</h1>
+    </div>
+    <div class="topbar-actions">
+      <button id="btnSettings" class="btn btn-ghost btn-icon" title="Settings" aria-label="Settings"></button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="panel panel-files">
+      <div class="panel-header">
+        <input type="search" id="fileSearch" class="search-input" placeholder="Search" aria-label="Search files">
+      </div>
+      <ul id="fileList" class="file-list"></ul>
+      <p id="fileListEmpty" class="empty-hint" hidden></p>
+    </aside>
+
+    <section class="panel panel-doc">
+      <div class="doc-card">
+        <header class="doc-header" id="docHeader" hidden>
+          <h2 class="doc-title" id="docTitle"></h2>
+          <div class="doc-header-controls">
+            <div class="toc-trigger" id="tocTrigger" hidden>
+              <button type="button" class="doc-header-icon-btn toc-trigger-btn" id="tocTriggerBtn" aria-label="Table of contents" aria-haspopup="true"></button>
+              <div class="toc-popover">
+                <div class="toc-popover-card">
+                  <div class="toc-popover-header">On this page</div>
+                  <ul class="toc-popover-list" id="tocPopoverList"></ul>
+                </div>
+              </div>
+            </div>
+            <div class="font-stepper" id="fontStepper">
+              <input type="text" id="fontDisplay" class="font-display" readonly aria-label="Current font">
+              <div class="font-step-group">
+                <button type="button" class="font-step-btn prev" id="fontPrevBtn" aria-label="Previous font"></button>
+                <button type="button" class="font-step-btn next" id="fontNextBtn" aria-label="Next font"></button>
+              </div>
+            </div>
+            <div class="zoom-control">
+              <span class="zoom-value" id="zoomValue"></span>
+              <div class="zoom-btn-group">
+                <button type="button" class="zoom-btn out" id="zoomOutBtn" aria-label="Zoom out"></button>
+                <button type="button" class="zoom-btn in" id="zoomInBtn" aria-label="Zoom in"></button>
+              </div>
+            </div>
+            <button type="button" class="doc-header-icon-btn" id="rawToggleBtn" aria-label="View raw markdown" aria-pressed="false" title="View raw markdown"></button>
+          </div>
+        </header>
+
+        <main class="panel-detail" id="docDetail">
+          <div class="empty-state" id="emptyState">
+            <p>Select a file from the list to view it here.</p>
+          </div>
+
+          <article class="doc-content" id="docContent" hidden>
+            <div class="doc-body-wrap">
+              <div class="markdown-body" id="docBody"></div>
+            </div>
+          </article>
+        </main>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/utils.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/icons.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/modal.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/theme.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/settings.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/markdown.js"></script>
+<script src="https://isafuianish-dev.github.io/webapp_cdnBuddy/js/manual.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
